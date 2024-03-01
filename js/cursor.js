@@ -58,9 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 }); 
 
-
+// eyeGroup
 const eyeGroup = document.querySelector('.eye-group');
 const eye = document.querySelector('.eye');
+
+// 현재 눈의 위치
+let currentEyeTranslateX = 0;
+let currentEyeTranslateY = 0;
 
 document.addEventListener('mousemove', (e) => {
   const { clientX: mouseX, clientY: mouseY } = e;
@@ -73,21 +77,25 @@ document.addEventListener('mousemove', (e) => {
   const deltaY = mouseY - eyeCenterY;
 
   const angle = Math.atan2(deltaY, deltaX);
-  const distance = Math.min(10, Math.sqrt(deltaX ** 2 + deltaY ** 2));
+  const distance = Math.min(5, Math.sqrt(deltaX ** 2 + deltaY ** 2));
 
-  const eyeTranslateX = Math.cos(angle) * distance;
-  const eyeTranslateY = Math.sin(angle) * distance;
+  // 새로운 목표 위치
+  const targetEyeTranslateX = Math.cos(angle) * distance;
+  const targetEyeTranslateY = Math.sin(angle) * distance;
 
-  eyeGroup.style.transform = `translate(${eyeTranslateX}px, ${eyeTranslateY}px)`;
-  
+  // 현재 위치에서 목표 위치로 일정 비율씩만 이동
+  const easingFactor = 0.1;
+  currentEyeTranslateX += (targetEyeTranslateX - currentEyeTranslateX) * easingFactor;
+  currentEyeTranslateY += (targetEyeTranslateY - currentEyeTranslateY) * easingFactor;
 
+  eyeGroup.style.transform = `translate(${currentEyeTranslateX}px, ${currentEyeTranslateY}px)`;
+});
+const svgElement = document.querySelector(".absolute");
 
+document.addEventListener("mousemove", () => {
+  svgElement.classList.remove("-not-active");
 
-
-
-
-  // eyeGroup.style.transform = `translate3d(${mx * eyeGroup.getBoundingClientRect().width / 2}px, ${my}px, 0)`;
-  // black.current.style.transform = `translate3d(${mx * black.current.getBoundingClientRect().width / 2}px, ${my}px, 0)`
-
-
+  setTimeout(() => {
+    svgElement.classList.add("-not-active");
+  }, 2000);
 });

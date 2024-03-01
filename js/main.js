@@ -16,13 +16,24 @@ $(window).on("load",function() {
     });
   }).scroll(); //invoke scroll-handler on page-load
 });
-// Fade scroll /////////////////////
-    
 
 
-
+// Fade out scroll /////////////////////
 $(window).scroll(function(){
-  $(".fade_scroll").css("opacity", 1 - $(window).scrollTop() / 250);
+  // 현재 스크롤 위치
+  var scrollPosition = $(window).scrollTop();
+
+  // 스크롤 다운 여부 확인
+  if (scrollPosition > 0) {
+    // 스크롤 다운 시
+    $(".fade_scroll").addClass("sticky");
+  } else {
+    // 스크롤 다운이 아닐 시
+    $(".fade_scroll").removeClass("sticky");
+  }
+
+  // fade 효과 처리
+  $(".fade_scroll").css("opacity", 1 - scrollPosition / 250);
 });
 
 

@@ -15,21 +15,20 @@
 }
 
 .eye-top {
-  transform: translateY(20px) scaleY(.5);
+  transform: translateY(20px) scaleY(0.5);
   opacity: 0;
-  transition: .5s transform ease, .3s opacity;
+  transition: 0.5s transform ease, 0.3s opacity;
 }
 .eye-bottom {
-  transform: translateY(45px) scaleY(.5);
+  transform: translateY(45px) scaleY(0.5);
   opacity: 0;
-  transition: .5s transform ease, .3s opacity;
+  transition: 0.5s transform ease, 0.3s opacity;
 }
 
 .-not-active {
-  .eye-top, .eye-bottom {
+  .eye-top,
+  .eye-bottom {
     transform: none;
     opacity: 1;
   }
 }
-
-
