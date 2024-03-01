@@ -2,10 +2,10 @@ html, body, div, span, applet, object,iframe, h1, h2, h3, h4, h5, h6, p, blockqu
   margin: 0;
   padding: 0;
   border: 0;
-  line-height: 1.2;
+  line-height: 1.5;
   /* font-size: 100%; */
   border-style: solid;
-  border-color: #C7D9D2;
+  border-color: #726867;
   vertical-align: baseline;
   }
   
@@ -18,7 +18,7 @@ html, body, div, span, applet, object,iframe, h1, h2, h3, h4, h5, h6, p, blockqu
     box-sizing: border-box;
     border-style: solid;
     /* border-width: 1px; */
-    border-color: #C7D9D2;
+    border-color: #726867;
   }
 body {
   word-break: keep-all;
@@ -70,7 +70,8 @@ input, select, textarea {
 }
 
 html {
-	font-family: 'comma';
+	/* font-family: 'pretendard'; */
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -107,6 +108,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 
 p {margin-top: 0;
 }
+span {
+  display: inline-block;
+}
+
 i {font-style: normal;}
 abbr[title],
 abbr[data-original-title] {
@@ -177,7 +182,11 @@ sup {
 a {
   text-decoration: none;
   background-color: transparent;
-  /* transition: all 0.3s; */
+  cursor: pointer;
+  transition: all 0.3s;
+}
+a:active {
+  color: #131010;
 }
 
 a:not([href]):not([class]) {
@@ -215,6 +224,7 @@ img {
 }
 
 svg {
+  border: none;
   overflow: hidden;
   vertical-align: middle;
 }
@@ -454,56 +464,83 @@ pre code {
   flex-grow: 1;
   max-width: 100%;
 }
-
-
-
-/* #intro{background: url(../img/bg.png)no-repeat 0 0 /contain,url(../img/people.png)no-repeat 0 90% /contain,url(../img/bg3.svg)no-repeat 0 100%,linear-gradient(180deg, #00BF96 0%, #11B09E 15%, rgba(54, 172, 106, 0.7) 35%);} */
-#intro{background: url(../img/bg.png)no-repeat 0 0 /contain,url(../img/people.png)no-repeat 0 90% /contain,url(../img/bg3.svg)no-repeat 0 100%,#E7FAF3;}
-
-@media (max-width: 768px) {
-  
-  #intro{/*background:url(../img/people.png)repeat-x 8% 110% ,url(../img/bg3.svg)no-repeat 0 100%,linear-gradient(180deg, #00BF96 0%, #11B09E 15%, rgba(54, 172, 106, 0.7) 35%) !important;*/
-  background: url(../img/main_banner_m4.svg)no-repeat 0 0px /contain,#F1FCF8 !important;}
-}
- 
-
-@media (max-width: 768px) {
-  /* #intro{background: url(../img/bg.png)no-repeat 100% 0% /200%,linear-gradient(180deg, #00BF96 0%, #11B09E 10%, rgba(54, 172, 106, 0.7) 35%),url(../img/bg3.svg)no-repeat 0 100%;} */
- 
+#header_fixed {
+  opacity: 0;
+  top: -120px;
+  transition: all 0.5s ease; /* 트랜지션을 추가합니다. */
 }
 
-@media (min-width: 1024px) {
-  
+/* cursor */
+#custom_cursor {
+  background-color: #ffffff;
+  position: fixed;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease; /* 호버 시 애니메이션을 위한 트랜지션을 추가합니다. */
+}
+.hovered {
+  transform: scale(4); /* 호버 시 크기를 키우는 변환을 적용합니다. */
+}
+@media only screen and (max-width: 768px) {
+  .custom_cursor {
+    display: none;
+  }
 }
 
-@media (min-width: 1280px) {
- 
-}
-
-/*a[class^="btn-"] {
+/* menu */
+.animate-link {
   position: relative;
-  display: block;
   overflow: hidden;
-  text-transform: uppercase; 
-  
-}*/
-span.txt-type:before {
-  right: -75%;
-  display: block;
-  content: '';
-  width: 65px;
-  height: 100%;
-  background: url(../img/comma.svg)no-repeat 0 0% /contain;
-  position: absolute;
+  display: flex;
 }
-span.txt-type:after {
-  left: -75%;
+
+.animate-link .hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.animate-link-tr {
+  position: absolute;
   top: 0;
-  display: block;
-  transform: rotate(180deg);
-  content: '';
-  width: 65px;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background: url(../img/comma.svg)no-repeat 0 100% /contain;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
+
+.animate-link-tr > * {
+  transition: transform 0.5s ease;
+}
+
+.animate-link-tr > :first-child {
+  transform: none;
+}
+
+.animate-link-tr > :last-child {
+  transform: translateY(50%) rotate(-10deg);
+}
+
+.animate-link:hover .animate-link-tr > :first-child {
+  transform: translateY(-150%) rotate(-10deg);
+}
+
+.animate-link:hover .animate-link-tr > :last-child {
+  transform: translateY(-100%) rotate(0deg);
+}
+
+.animate-link .hover {
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+

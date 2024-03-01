@@ -1,0 +1,19 @@
+{
+  "name": "suziportfolio_2024",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -c ./tailwind.config.js -i ./css/input.css -o ./css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suzi960121/suzi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suzi960121/suzi/issues"
+  },
+  "homepage": "https://github.com/suzi960121/suzi#readme"
+}
