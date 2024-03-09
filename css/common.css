@@ -472,7 +472,7 @@ pre code {
 
 /* cursor */
 #custom_cursor {
-  background-color: #ffffff;
+  background: #fff;
   position: fixed;
   width: 1rem;
   height: 1rem;
@@ -490,6 +490,41 @@ pre code {
     display: none;
   }
 }
+/* Scroll bar */
+
+*::-webkit-scrollbar {
+ display: none; 
+ overflow: hidden;
+} 
+.c-scrollbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0; }
+  .c-scrollbar:hover {
+    transform: scaleX(1.45); }
+  .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+    opacity: 1; }
+
+.c-scrollbar_thumb {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab; }
+  .has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing; }
+
 
 /* menu */
 .animate-link {

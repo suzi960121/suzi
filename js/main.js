@@ -3,7 +3,7 @@ $(document).ready(function(){
 $(window).on("load",function() {
   $(window).scroll(function() {
     var windowBottom = $(this).scrollTop() + $(this).innerHeight() + 800; 
-    $(".index .container").each(function() {
+    $(".main .container").each(function() {
       /* Check the location of each desired element */
       var objectBottom = $(this).offset().top + $(this).outerHeight();
       
@@ -23,19 +23,17 @@ $(window).scroll(function(){
   // 현재 스크롤 위치
   var scrollPosition = $(window).scrollTop();
 
-  // 스크롤 다운 여부 확인
-  if (scrollPosition > 0) {
-    // 스크롤 다운 시
-    $(".fade_scroll").addClass("sticky");
-  } else {
-    // 스크롤 다운이 아닐 시
-    $(".fade_scroll").removeClass("sticky");
-  }
+  // // 스크롤 다운 여부 확인
+  // if (scrollPosition > 0) {
+  //   // 스크롤 다운 시
+  //   $(".fade_scroll").addClass("sticky");
+  // } else {
+  //   // 스크롤 다운이 아닐 시
+  //   $(".fade_scroll").removeClass("sticky");
+  // }
 
   // fade 효과 처리
-  $(".fade_scroll").css("opacity", 1 - scrollPosition / 250);
+  $(".fade_scroll").css("opacity", 1 - scrollPosition / 850);
 });
-
-
 
 });

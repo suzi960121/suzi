@@ -8,7 +8,7 @@ const projectData = [
     start: `<section id="work" class="w-full pt-24 pb-14 flex flex-col gap-14">
     <ul class="flex flex-col gap-14"> 
     <li class="container flex-col gap-7 flex">`,
-    rootUrl: "projects/jbbank.html",
+    rootUrl: "/jbbank.html",
     type: "big",
     imgUrl: "/img/projects/jbbank.png",
     workType: "",

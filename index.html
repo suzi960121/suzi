@@ -10,7 +10,7 @@
   <meta property="og:type" content="웹사이트" />
   <meta property="og:title" content="Su Jeong Ha" />
   <meta property="og:description" content="Hi, I'm Sujeong Ha! A UXUI designer with interfaces, experiences, and visuals." />
-  <meta property="og:image" content="https://suzinsujeong.github.io/og.jpg" />
+  <meta property="og:image" content="https://suzi.vercel.app/og.jpg" />
   <title>Su Jeong Ha</title>
   <!-- 파비콘 -->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -26,10 +26,16 @@
   <!--tailwind.css -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <!-- <link rel="stylesheet" href="css/index.min.css"> -->
+
   <!-- 커스텀 CSS -->
   <link rel="stylesheet" href="/css/common.css" />
   <link rel="stylesheet" href="/css/output.css" />
   <link rel="stylesheet" href="/css/eye.css" />
+  
+  <!-- ScrollTrigger -->
+  <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
   <!-- 제이쿼리 js -->
   <script type="text/javascript" src="/js/jquery.min.js"></script>
@@ -39,18 +45,19 @@
   <!--tailwind js--->
   <script type="text/javascript" src="/js/index.min.js"></script>
   
+
   <!-- common -->
   <script defer src="./components/common/header.js"></script>
   <script defer src="/components/common/footer.js"></script>
   
   <script defer src="/components/main/selfIntroduction.js"></script>
-  <!-- <script defer src="/components/main/projectIntroduction.js"></script> -->
+  <script defer src="/components/main/projectIntroduction.js"></script>
   <script defer type="module" src="/components/main/projectList.js"></script>
 
   <!-- 커스텀 js -->
   <!-- <script src="tailwind.config.js"></script> -->
-  <script type="module"  src="/js/cursor.js"></script>
-  <script defer type="module" src="/js/magneticButton.js"></script>
+  <!-- <script defer type="module" src="/js/magneticButton.js"></script> -->
+  <script defer type="module" src="/js/common.js"></script>
   <script defer type="text/javascript" src="/js/main.js"></script>
   
   <!-- Google tag (gtag.js) -->
@@ -68,20 +75,23 @@
   <!-- 구글애널리스틱 -->
 </head>
 
-<body class="index">
+<body class="main overflow-x-hidden">
   <!-- <div id="root"></div> -->
   <div id="custom_cursor"></div>
-
   <div id="header"></div>
-  <div id="selfIntroduction" class="pt-40 top-0 -z-10 fade_scroll"></div>
-  <div class=" bg-white z-0 block relative">
-    <!-- <div id="projectIntroduction"></div> -->
-    <div id="projectList"></div>
-    <div id="footer"></div>
+  <div class="index">
+
+    <div id="selfIntroduction" class="pt-24 top-0 -z-10 fade_scroll"></div>
+    <div class="z-0 block relative rounded-t-3xl bg-white">
+      <div id="projectIntroduction" class=""></div>
+      <div id="projectList"></div>
+      <div id="footer"></div>
+    </div>
   </div>
 
   
   
+  <span class="c-scrollbar"><span class="c-scrollbar_thumb" style=""></span></span>
 </body>
 
 </html>

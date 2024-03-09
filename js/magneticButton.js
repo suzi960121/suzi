@@ -17,3 +17,4 @@ $$('.button').forEach(el => el.addEventListener('mouseleave', function() {
   this.style.transform += 'rotate3d(0, 0, 0, 0deg)';
   this.children[0].style.transform = 'translate3d(0px, 0px, 0px)';
 }));
+

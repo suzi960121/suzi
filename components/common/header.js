@@ -1,11 +1,11 @@
 let headerElemet = document.getElementById("header");
 
-let headerCode = `<header id="header_fixed" class="fixed bg-white top-0 z-[999] w-full px-24 pt-20 pb-4">
+let headerCode = `<header id="header_fixed" class="fixed top-0 z-[999] w-full px-24 pt-20 pb-4">
     <nav class="h-full justify-between items-center flex">
       <a href="/" class="pr-1 gap-2.5 flex"><img src="/img/logo.svg"></a>
       <ul class="gap-8 flex text-center text-lg font-normal uppercase h-full">
         <li class="">
-          <a id="custom_cursor_id" class="button block animate-link min-w-[100px] h-full">
+          <a class="button block animate-link min-w-[100px] h-full">
             <span class="hidden">Home</span>
             <span class="animate-link-tr">
               <span>Home</span>

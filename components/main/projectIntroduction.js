@@ -1,6 +1,6 @@
 let projectIntroductionElemet = document.getElementById('projectIntroduction');
 
-let projectIntroductionCode = `<section class="w-full py-6 bg-white flex-col gap-2.5 flex">
+let projectIntroductionCode = `<!--<section class="w-full py-6 bg-white flex-col gap-2.5 flex">
 <div class="container w-full justify-between items-center flex ">
     <div class="flex-col gap-4 flex max-w-[700px]">
         <div class="text-primary text-4xl font-bold">Featured projects</div>
@@ -9,11 +9,11 @@ let projectIntroductionCode = `<section class="w-full py-6 bg-white flex-col gap
         </p>
     </div>
     <div class="flex-col items-end gap-2.5 flex">
-        <a href="#work" class="work_category"><div class="ball"></div> Work</a>
-        <a href="#side_project" class="work_category side "text-orange-900"><div class="ball"></div>Side project</a>
+        <a href="#work" class="work_category button"><div class="ball"></div> Work</a>
+        <a href="#side_project" class="work_category side  button"text-orange-900"><div class="ball"></div>Side project</a>
     </div>
 </div>
-</section>
+</section> -->
 `
 
 
