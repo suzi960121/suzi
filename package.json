@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx tailwindcss -c ./tailwind.config.js -i ./css/input.css -o ./css/output.css --watch",
-    "build": "NODE_ENV=production npx tailwindcss -c ./tailwind.config.js -i ./css/input.css -o ./css/output.css --minify"
+    "build": "NODE_ENV=production npx tailwindcss -c ./tailwind.config.js -i ./css/input.css -o ./css/output.css --minify",
+    "serve": "parcel index.html --open",
+    "bundle": "parcel build index.html --dist-dir dist --no-source-maps"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/suzi960121/suzi/issues"
   },
-  "homepage": "https://github.com/suzi960121/suzi#readme"
+  "homepage": "https://github.com/suzi960121/suzi#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
 }
