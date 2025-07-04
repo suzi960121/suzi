@@ -46,4 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   // call once on load
   handleScroll();
+
+  // ------------------------------
+  // Add loading="lazy" to images without the attribute for better performance
+  // ------------------------------
+  document.querySelectorAll('img:not([loading])').forEach(img => {
+    img.setAttribute('loading', 'lazy');
+  });
 });

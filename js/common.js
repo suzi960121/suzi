@@ -1,5 +1,6 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const pageindex = document.querySelector(".index");

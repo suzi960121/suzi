@@ -32,9 +32,7 @@
   <link rel="stylesheet" href="/css/output.css" />
   <link rel="stylesheet" href="/css/eye.css" />
   
-  <!-- ScrollTrigger -->
-  <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <!-- Locomotive scroll (legacy); replace with npm version in future -->
   <script defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
   <!-- jQuery (deferred to avoid blocking) -->
@@ -46,20 +44,10 @@
   <script type="text/javascript" src="/js/index.min.js"></script>
   
 
-  <!-- common -->
-  <script defer src="./components/common/header.js"></script>
-  <script defer src="/components/common/footer.js"></script>
+  <!-- Bundled application entry (Parcel) -->
+  <script type="module" src="/js/entry.js"></script>
   
-  <script defer src="/components/main/selfIntroduction.js"></script>
-  <script defer src="/components/main/projectIntroduction.js"></script>
-  <script defer type="module" src="/components/main/projectList.js"></script>
 
-  <!-- 커스텀 js -->
-  <!-- <script src="tailwind.config.js"></script> -->
-  <!-- <script defer type="module" src="/js/magneticButton.js"></script> -->
-  <script defer type="module" src="/js/common.js"></script>
-  <script defer type="text/javascript" src="/js/main.js"></script>
-  
   <!-- Google tag (gtag.js) -->
   <script>
     window.dataLayer = window.dataLayer || [];
